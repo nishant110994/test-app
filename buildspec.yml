@@ -8,7 +8,7 @@ phases:
       - echo Logging in to Amazon ECR.......
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 211125390319.dkr.ecr.us-east-1.amazonaws.com
       - # Replace with this to your repository URI
-      - REPOSITORY_URL=211125390319.dkr.ecr.us-east-1.amazonaws.com/test-app
+      - REPOSITORY_URL=public.ecr.aws/r8c4o2p7/node-test-app:latest
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_NUMBER)
   build:
     commands:
